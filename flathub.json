@@ -1,5 +1,6 @@
 {
     "automerge-flathubbot-prs": false,
     "disable-external-data-checker": true,
-    "require-important-update": true
+    "require-important-update": true,
+    "end-of-life": "This application is no longer maintained."
 }
