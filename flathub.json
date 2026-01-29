@@ -2,5 +2,5 @@
     "automerge-flathubbot-prs": false,
     "disable-external-data-checker": true,
     "require-important-update": true,
-    "end-of-life": "This application is no longer maintained."
+    "end-of-life": "This Flatpak is no longer maintained."
 }
