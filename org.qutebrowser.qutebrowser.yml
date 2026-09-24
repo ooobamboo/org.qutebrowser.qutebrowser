@@ -164,11 +164,14 @@ modules:
             --prefix=${FLATPAK_DEST} Jinja2 --no-build-isolation
         sources:
           - type: file
-            url: https://files.pythonhosted.org/packages/df/bf/f7da0350254c0ed7c72f3e33cef02e048281fec7ecec5f032d4aac52226b/Jinja2-3.1.6.tar.gz
-            sha256: 0137fb05990d35f1275a587e9aee6d56da821fc83491a0fb838183be43f66d6d
+            url: https://files.pythonhosted.org/packages/62/a1/3d680cbfd5f4b8f15abc1d571870c5fc3e594bb582bc3b64ea099db13e56/jinja2-3.1.6-py3-none-any.whl
+            sha256: 85ece4451f492d0c13c5dd7c13a64681a86afae63a5f347908daf103ce6d2f67
             x-checker-data:
               type: pypi
               name: Jinja2
+              packagetype: bdist_wheel
+              # the sdist consistently returns 404 from files.pythonhosted.org on
+              # some networks (CDN issue), so use the pure-python wheel instead
         modules:
           - name: python-markupsafe
             buildsystem: simple
@@ -177,11 +180,25 @@ modules:
                 --prefix=${FLATPAK_DEST} MarkupSafe --no-build-isolation
             sources:
               - type: file
-                url: https://files.pythonhosted.org/packages/7e/99/7690b6d4034fffd95959cbe0c02de8deb3098cc577c67bb6a24fe5d7caa7/MarkupSafe-3.0.3.tar.gz
-                sha256: 722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698
+                only-arches:
+                  - x86_64
+                url: https://files.pythonhosted.org/packages/a9/21/9b05698b46f218fc0e118e1f8168395c65c8a2c750ae2bab54fc4bd4e0e8/markupsafe-3.0.3-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl
+                sha256: ccfcd093f13f0f0b7fdd0f198b90053bf7b2f02a3927a30e63f3ccc9df56b676
                 x-checker-data:
                   type: pypi
                   name: MarkupSafe
+                  packagetype: bdist_wheel
+                  # the sdist consistently returns 404 on files.pythonhosted.org (CDN
+                  # issue), so use the prebuilt wheel instead
+              - type: file
+                only-arches:
+                  - aarch64
+                url: https://files.pythonhosted.org/packages/00/07/575a68c754943058c78f30db02ee03a64b3c638586fba6a6dd56830b30a3/markupsafe-3.0.3-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl
+                sha256: 133a43e73a802c5562be9bbcd03d090aa5a1fe899db609c29e8c8d815c5f6de6
+                x-checker-data:
+                  type: pypi
+                  name: MarkupSafe
+                  packagetype: bdist_wheel
 
       - name: python-pygments
         # available in the sdk but not in the runtime
