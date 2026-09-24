@@ -1,5 +1,3 @@
-diff --git a/misc/org.qutebrowser.qutebrowser.appdata.xml b/misc/org.qutebrowser.qutebrowser.appdata.xml
-index 4f2880dc1..d057e4398 100644
 --- a/misc/org.qutebrowser.qutebrowser.appdata.xml
 +++ b/misc/org.qutebrowser.qutebrowser.appdata.xml
 @@ -12,6 +12,9 @@
@@ -7,7 +5,7 @@ index 4f2880dc1..d057e4398 100644
  			and is based on Python and PyQt5.
  		</p>
 +		<p>
-+			For Flatpak specific documentation, visit https://github.com/flathub/org.qutebrowser.qutebrowser/wiki.
++			For Flatpak specific documentation, visit https://github.com/ooobamboo/org.qutebrowser.qutebrowser/wiki.
 +		</p>
  	</description>
  	<categories>

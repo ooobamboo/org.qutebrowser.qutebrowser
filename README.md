@@ -1,3 +1,3 @@
 # qutebrowser Flatpak
 
-Visit the [wiki](https://github.com/flathub/org.qutebrowser.qutebrowser/wiki) for documentation.
+Visit the [wiki](https://github.com/ooobamboo/org.qutebrowser.qutebrowser/wiki) for documentation.
