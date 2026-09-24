@@ -39,9 +39,9 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: qutebrowser-${GITHUB_REF_NAME}.flatpak
+          name: qutebrowser-${{ github.ref_name }}.flatpak
           path: |
-            qutebrowser-${GITHUB_REF_NAME}.flatpak
+            qutebrowser-${{ github.ref_name }}.flatpak
             SHA256SUMS
 
       - name: Create release
@@ -51,7 +51,7 @@ jobs:
           name: ${{ github.ref_name }}
           tag_name: ${{ github.ref_name }}
           files: |
-            qutebrowser-${GITHUB_REF_NAME}.flatpak
+            qutebrowser-${{ github.ref_name }}.flatpak
             SHA256SUMS
           body: |
             Qt6 qutebrowser Flatpak for the manual distribution channel.
@@ -61,5 +61,5 @@ jobs:
 
             Install:
             ```
-            flatpak install ./qutebrowser-${GITHUB_REF_NAME}.flatpak
+            flatpak install ./qutebrowser-${{ github.ref_name }}.flatpak
             ```
